@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Quick and dirty examples.
+ */
 public class App {
     public static void main(String[] args) {
 
@@ -17,6 +20,37 @@ public class App {
 
 
         // WRITE
+        serialize(appUser, file);
+
+        //READ
+        System.out.println(deserialize(file).toString());
+
+        // USING MORE THEN ONE.
+
+        // WRITE
+        serialize(appUserList, file.getPath());
+
+        //READ
+        System.out.println(deserialize(file.getPath()).toString());
+
+
+    }
+
+    private static AppUser deserialize(File file) {
+        AppUser deserialized = null;
+
+        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(file))) {
+
+            deserialized = (AppUser) in.readObject();
+
+        } catch (IOException | ClassNotFoundException ex) {
+            ex.printStackTrace();
+        }
+
+        return deserialized;
+    }
+
+    private static void serialize(AppUser appUser, File file) {
         try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(file))) {
 
             out.writeObject(appUser);
@@ -24,24 +58,6 @@ public class App {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-
-
-        //READ
-        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(file))) {
-
-            Object deserialized = in.readObject();
-
-            System.out.println(deserialized.toString());
-
-        } catch (IOException | ClassNotFoundException ex) {
-            ex.printStackTrace();
-        }
-
-        serialize(appUserList, file.getPath());
-
-        System.out.println(deserialize(file.getPath()).toString());
-
-
     }
 
     public static List<AppUser> serialize(List<AppUser> source, String filePath) {
