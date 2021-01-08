@@ -1,5 +1,7 @@
 package se.lexicon;
 
+import se.lexicon.model.AppUser;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
