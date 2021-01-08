@@ -1,9 +1,13 @@
 package se.lexicon;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import se.lexicon.model.Car;
+import se.lexicon.model.Owner;
 
 import java.io.File;
 import java.io.IOException;
@@ -24,45 +28,66 @@ public class JsonIO {
     }
 
 
-    public void serializeToJson(List<Car> source, File destination){
+    public <T> void serializeToJson(T source, File destination) {
 
-        try{
+        try {
             objectMapper.writeValue(destination, source);
 
-        }catch (IOException ex){
+        } catch (IOException ex) {
             ex.printStackTrace();
-        }finally {
+        } finally {
             System.out.println("Inside serializeToJson method in class JsonIO");
         }
     }
 
-    public List<Car> deserializeFromJson(File file){
+
+/*    public <T> List<T> deserializeListFromJson(File file) {
+
+        List<T> deserializedObjects = new ArrayList<>();
+
+        try {
+            deserializedObjects = objectMapper.readValue(file, new TypeReference<List<T>>() {
+            });
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            System.out.println("Inside deserializeCarListFromJson method in class JsonIO");
+        }
+
+        return deserializedObjects;
+    }*/
+
+
+    public List<Car> deserializeCarListFromJson(File file) {
 
         List<Car> deserializedObjects = new ArrayList<>();
 
         try {
-            deserializedObjects = objectMapper.readValue(file, new TypeReference<List<Car>>() {});
-
+            deserializedObjects = objectMapper.readValue(file, new TypeReference<List<Car>>() {
+            });
         } catch (IOException e) {
             e.printStackTrace();
-        }finally {
-            System.out.println("Inside deserializeFromJson method in class JsonIO");
+        } finally {
+            System.out.println("Inside deserializeCarListFromJson method in class JsonIO");
         }
-
 
         return deserializedObjects;
     }
 
+    public List<Owner> deserializeOwnerListFromJson(File file) {
 
+        List<Owner> deserializedObjects = new ArrayList<>();
 
+        JavaType type = objectMapper.getTypeFactory().constructCollectionType(List.class, Owner.class);
+        try {
+            deserializedObjects = objectMapper.readValue(file, type);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            System.out.println("Inside deserializeCarListFromJson method in class JsonIO");
+        }
 
-
-
-
-
-
-
-
-
+        return deserializedObjects;
+    }
 
 }

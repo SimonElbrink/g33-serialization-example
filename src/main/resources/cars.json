@@ -1,29 +1,29 @@
 [ {
-  "carId" : "37fb0a72-a088-4224-89d6-f8626c1a89c3",
+  "carId" : "b2847fd1-2c2b-4e98-9927-923a9bc0152d",
   "regNumber" : "ABC123",
   "brand" : "Volvo",
   "model" : "XC90",
   "regDate" : "2021-01-08"
 }, {
-  "carId" : "cd8d0f65-7e94-40c9-9a9c-8947522e93a8",
+  "carId" : "520b14fa-be14-46e6-a544-3c7481d46edc",
   "regNumber" : "ABC456",
   "brand" : "BMW",
   "model" : "E30",
   "regDate" : "2021-01-07"
 }, {
-  "carId" : "8f896f01-c9c9-4f48-ae7c-a8a35585559a",
+  "carId" : "05492eea-c36b-4e15-bcb9-fdc4cf231a3a",
   "regNumber" : "CBA123",
   "brand" : "Tesla",
   "model" : "Model 3",
   "regDate" : "2021-02-02"
 }, {
-  "carId" : "a1131f24-f7a6-4ecc-bd7b-84136240aec6",
+  "carId" : "294790c6-35b5-4268-a4f3-7101cf4302df",
   "regNumber" : "CBA123",
   "brand" : "Tesla",
   "model" : "Model 3",
   "regDate" : "2019-01-25"
 }, {
-  "carId" : "4e0a7d54-ce61-4102-bd87-a153de8d38b3",
+  "carId" : "dd649508-f8eb-430f-aac6-18b656d6c649",
   "regNumber" : "GFH658",
   "brand" : "Volvo",
   "model" : "XC70",

@@ -1,0 +1,33 @@
+[ {
+  "id" : 1,
+  "firstName" : "Simon",
+  "lastName" : "Elbrink",
+  "age" : 23,
+  "password" : "123456789",
+  "ownedCars" : [ {
+    "carId" : "b2847fd1-2c2b-4e98-9927-923a9bc0152d",
+    "regNumber" : "ABC123",
+    "brand" : "Volvo",
+    "model" : "XC90",
+    "regDate" : "2021-01-08"
+  } ]
+}, {
+  "id" : 2,
+  "firstName" : "Erik",
+  "lastName" : "Svensson",
+  "age" : 0,
+  "password" : "987654321",
+  "ownedCars" : [ {
+    "carId" : "05492eea-c36b-4e15-bcb9-fdc4cf231a3a",
+    "regNumber" : "CBA123",
+    "brand" : "Tesla",
+    "model" : "Model 3",
+    "regDate" : "2021-02-02"
+  }, {
+    "carId" : "294790c6-35b5-4268-a4f3-7101cf4302df",
+    "regNumber" : "CBA123",
+    "brand" : "Tesla",
+    "model" : "Model 3",
+    "regDate" : "2019-01-25"
+  } ]
+} ]

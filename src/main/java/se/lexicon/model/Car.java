@@ -1,6 +1,6 @@
-package se.lexicon;
+package se.lexicon.model;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.*;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -16,8 +16,11 @@ public class Car implements Serializable {
     @JsonFormat(shape = JsonFormat.Shape.STRING)
     private LocalDate regDate;
 
+    @JsonBackReference
+    private Owner owner;
+
     public Car(String regNumber, String brand, String model, LocalDate regDate) {
-        this.carId = UUID.randomUUID();
+        this();
         this.regNumber = regNumber;
         this.brand = brand;
         this.model = model;
@@ -64,17 +67,25 @@ public class Car implements Serializable {
         this.regDate = regDate;
     }
 
+    public Owner getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Owner owner) {
+        this.owner = owner;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Car car = (Car) o;
-        return Objects.equals(getCarId(), car.getCarId()) && Objects.equals(getRegNumber(), car.getRegNumber()) && Objects.equals(getBrand(), car.getBrand()) && Objects.equals(getModel(), car.getModel()) && Objects.equals(getRegDate(), car.getRegDate());
+        return Objects.equals(getCarId(), car.getCarId()) && Objects.equals(getRegNumber(), car.getRegNumber()) && Objects.equals(getBrand(), car.getBrand()) && Objects.equals(getModel(), car.getModel()) && Objects.equals(getRegDate(), car.getRegDate()) && Objects.equals(getOwner(), car.getOwner());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getCarId(), getRegNumber(), getBrand(), getModel(), getRegDate());
+        return Objects.hash(getCarId(), getRegNumber(), getBrand(), getModel(), getRegDate(), getOwner());
     }
 
     @Override
