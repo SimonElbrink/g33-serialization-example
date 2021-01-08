@@ -1,0 +1,31 @@
+[ {
+  "carId" : "37fb0a72-a088-4224-89d6-f8626c1a89c3",
+  "regNumber" : "ABC123",
+  "brand" : "Volvo",
+  "model" : "XC90",
+  "regDate" : "2021-01-08"
+}, {
+  "carId" : "cd8d0f65-7e94-40c9-9a9c-8947522e93a8",
+  "regNumber" : "ABC456",
+  "brand" : "BMW",
+  "model" : "E30",
+  "regDate" : "2021-01-07"
+}, {
+  "carId" : "8f896f01-c9c9-4f48-ae7c-a8a35585559a",
+  "regNumber" : "CBA123",
+  "brand" : "Tesla",
+  "model" : "Model 3",
+  "regDate" : "2021-02-02"
+}, {
+  "carId" : "a1131f24-f7a6-4ecc-bd7b-84136240aec6",
+  "regNumber" : "CBA123",
+  "brand" : "Tesla",
+  "model" : "Model 3",
+  "regDate" : "2019-01-25"
+}, {
+  "carId" : "4e0a7d54-ce61-4102-bd87-a153de8d38b3",
+  "regNumber" : "GFH658",
+  "brand" : "Volvo",
+  "model" : "XC70",
+  "regDate" : "2020-12-24"
+} ]
